@@ -1,3 +1,4 @@
+var cors = require('cors')
 var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
@@ -5,10 +6,12 @@ var express = require('express'),
   Record = require('./api/models/esmadAPIModel'),
   bodyParser = require('body-parser');
   
+  
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/esmad_session',  { useNewUrlParser: true }); 
 
 app.use(bodyParser.json());
+app.use(cors()); 
 
 var routes = require('./api/routes/esmadAPIRoutes'); 
 routes(app);
