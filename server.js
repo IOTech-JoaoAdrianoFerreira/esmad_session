@@ -1,7 +1,3 @@
-// Tutorial: https://www.codementor.io/olatundegaruba/nodejs-restful-apis-in-10-minutes-q0sgsfhbd
-// MongoDB Database: https://www.mongodb.com/download-center/community?jmp=docs
-// Mongo Compass: https://www.mongodb.com/products/compass
-
 var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
