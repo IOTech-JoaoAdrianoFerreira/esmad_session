@@ -2,23 +2,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var Record = new Schema({
-  name: {
-    type: String,
-    required: 'Kindly enter the name of the task'
-  },
-  Created_date: {
-    type: Date,
-    default: Date.now
-  },
-  status: {
-    type: [{
-      type: String,
-      enum: ['pending', 'ongoing', 'completed']
-    }],
-    default: ['pending']
-  }
+  timestamp: { type: Date, default: Date.now },
+  value: { type: Number, required: true }
 });
 
 module.exports = mongoose.model('Record', Record);
