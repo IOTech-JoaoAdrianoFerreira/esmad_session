@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function(app) {
+module.exports = function (app) {
   var esmad_controller = require('../controllers/esmadAPIController');
 
   app.route('/records')
@@ -10,4 +10,7 @@ module.exports = function(app) {
     .get(esmad_controller.list_record)
     .put(esmad_controller.update_record)
     .delete(esmad_controller.delete_record);
+
+  app.route('/configurations')
+    .post(esmad_controller.start_stop);
 };
