@@ -61,6 +61,7 @@ exports.start_stop = function (req, res) {
       dataBits: 8,
       stopBits: 1
     });
+    
     if (action == "0" || action == "1") {
       serialPort.open(function (error) {
         if (error) {
